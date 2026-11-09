@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://3248.co.kr/sitemap.xml
