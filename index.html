@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>명성도장 | 건축 도장 · 방수 · 바닥 공사 전문</title>
+<meta name="description" content="명성도장 - 이름을 걸고 칠합니다. 건축 도장, 탄성코트, 방수 공사, 에폭시 바닥, 방청·내화 도장 전문. 견적 문의 010-8007-3248">
+<link rel="icon" href="assets/myeongseong-logo.svg">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --navy:#1F3A5F; --navy-deep:#142940; --orange:#E0661F; --orange-soft:#FDF0E7;
+  --ink:#1b2430; --muted:#5d6b7c; --line:#e3e8ef; --bg:#ffffff; --bg-alt:#f5f7fa;
+  --radius:14px; --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:Pretendard,"Malgun Gothic",sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;word-break:keep-all;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+section{padding:96px 0}
+.eyebrow{display:inline-block;color:var(--orange);font-weight:700;font-size:14px;letter-spacing:.12em;margin-bottom:10px}
+.title{font-size:clamp(26px,3.4vw,38px);font-weight:800;color:var(--navy);line-height:1.3;letter-spacing:-.02em}
+.lead{color:var(--muted);font-size:17px;margin-top:12px}
+.head{margin-bottom:48px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:15px 26px;border-radius:999px;font-weight:700;font-size:16px;transition:transform .15s,background .15s,box-shadow .15s;cursor:pointer;border:0;font-family:inherit}
+.btn svg{width:20px;height:20px}
+.btn-primary{background:var(--orange);color:#fff;box-shadow:0 6px 18px rgba(224,102,31,.35)}
+.btn-primary:hover{background:#c9571a;transform:translateY(-2px)}
+
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:50;transition:background .25s,box-shadow .25s}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo img{height:54px;width:auto}
+.logo .dark{display:none}
+header.solid{background:#fff;box-shadow:0 2px 14px rgba(20,41,64,.08)}
+header.solid .logo .light{display:none}
+header.solid .logo .dark{display:block}
+nav{display:flex;align-items:center;gap:30px}
+nav a{color:#fff;font-weight:600;font-size:15px;opacity:.92}
+nav a:hover{opacity:1;color:var(--orange)}
+header.solid nav a{color:var(--ink)}
+nav .call{background:var(--orange);color:#fff!important;padding:9px 18px;border-radius:999px;opacity:1}
+nav .call:hover{background:#c9571a}
+
+/* hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;color:#fff;padding:120px 0 80px;
+  background:linear-gradient(180deg,rgba(14,26,42,.62) 0%,rgba(14,26,42,.5) 45%,rgba(14,26,42,.78) 100%),url("images/hero.jpg") center/cover no-repeat}
+.hero .wrap{width:100%}
+.hero h1{font-size:clamp(40px,7vw,76px);font-weight:800;letter-spacing:-.03em;line-height:1.15;text-shadow:0 2px 24px rgba(0,0,0,.25)}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero p{font-size:clamp(17px,2vw,21px);margin:20px 0 38px;opacity:.94;max-width:620px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:56px}
+.hero .chips span{font-size:14px;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25)}
+.scroll-cue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);opacity:.7;animation:bob 2s infinite}
+@keyframes bob{50%{transform:translate(-50%,6px)}}
+
+/* services */
+#services{background:var(--bg-alt)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.svc{background:#fff;border-radius:var(--radius);padding:30px 28px;border:1px solid var(--line)}
+.svc-head{display:flex;align-items:center;gap:14px;margin-bottom:22px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.svc-ic{width:52px;height:52px;border-radius:12px;background:var(--orange-soft);color:var(--orange);display:flex;align-items:center;justify-content:center;flex:none}
+.svc-ic svg{width:28px;height:28px}
+.svc-head small{display:block;color:var(--orange);font-weight:700;font-size:13px}
+.svc-head h3{font-size:21px;color:var(--navy);font-weight:800}
+.svc ul{list-style:none;display:flex;flex-direction:column;gap:18px}
+.svc li b{display:block;color:var(--ink);font-size:16px;margin-bottom:2px}
+.svc li span{color:var(--muted);font-size:14.5px}
+.svc li .tag{font-style:normal;display:inline-block;margin-left:6px;font-size:12px;color:var(--navy);background:#eaf0f7;border-radius:6px;padding:1px 7px;vertical-align:2px;font-weight:600}
+
+/* works */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.filters button{font-family:inherit;font-size:15px;font-weight:600;padding:9px 18px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--muted);cursor:pointer}
+.filters button.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.works{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.work{cursor:pointer;border-radius:var(--radius);overflow:hidden;background:#fff;border:1px solid var(--line);transition:transform .2s,box-shadow .2s;text-align:left;font-family:inherit;padding:0}
+.work:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(20,41,64,.12)}
+.work .ph{position:relative;aspect-ratio:4/3;overflow:hidden;background:#dde3ea}
+.work img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.work:hover img{transform:scale(1.05)}
+.work .cnt{position:absolute;right:10px;bottom:10px;background:rgba(14,26,42,.75);color:#fff;font-size:12.5px;padding:3px 10px;border-radius:999px}
+.work .meta{padding:16px 18px 18px}
+.work .cats{display:flex;gap:6px;margin-bottom:6px}
+.work .cats span{font-size:12px;font-weight:700;color:var(--orange)}
+.work h3{font-size:17px;color:var(--ink);font-weight:700;line-height:1.4}
+.work p{font-size:14px;color:var(--muted);margin-top:2px}
+.more{text-align:center;margin-top:36px}
+.more button{background:#fff;color:var(--navy);border:1.5px solid var(--navy)}
+.more button:hover{background:var(--navy);color:#fff}
+
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(8,14,22,.94);z-index:100;display:none;flex-direction:column;color:#fff}
+.lb.open{display:flex}
+.lb-top{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;gap:16px}
+.lb-top h4{font-size:17px;font-weight:700}
+.lb-top small{opacity:.7;margin-left:8px;font-weight:400}
+.lb-x{background:none;border:0;color:#fff;font-size:34px;line-height:1;cursor:pointer;padding:0 6px}
+.lb-stage{flex:1;display:flex;align-items:center;justify-content:center;position:relative;min-height:0;padding:0 64px}
+.lb-stage img{max-height:100%;max-width:100%;object-fit:contain;border-radius:6px}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);border:0;color:#fff;width:48px;height:48px;border-radius:50%;font-size:24px;cursor:pointer}
+.lb-nav:hover{background:rgba(255,255,255,.25)}
+.lb-prev{left:10px}.lb-next{right:10px}
+.lb-thumbs{display:flex;gap:6px;overflow-x:auto;padding:14px 20px 18px}
+.lb-thumbs img{width:64px;height:48px;object-fit:cover;border-radius:4px;opacity:.45;cursor:pointer;flex:none;border:2px solid transparent}
+.lb-thumbs img.on{opacity:1;border-color:var(--orange)}
+
+/* process */
+#process{background:var(--navy);color:#fff}
+#process .title{color:#fff}
+#process .lead{color:#b9c6d6}
+.steps{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;position:relative}
+.steps::before{content:"";position:absolute;top:42px;left:7%;right:7%;height:2px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.3) 0 6px,transparent 6px 12px)}
+.step{text-align:center;position:relative}
+.step .ic{width:84px;height:84px;margin:0 auto 16px;border-radius:50%;background:#fff;color:var(--navy);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 8px var(--navy)}
+.step .ic svg{width:40px;height:40px}
+.step:last-child .ic{background:var(--orange);color:#fff}
+.step small{display:block;font-size:12.5px;color:var(--orange);font-weight:700;letter-spacing:.06em}
+.step b{display:block;font-size:17px;margin-top:2px}
+.step span{display:block;font-size:13.5px;color:#b9c6d6;margin-top:6px;line-height:1.5}
+
+/* contact */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cards .note{grid-column:1/-1}
+.ccard{display:flex;align-items:center;gap:18px;padding:24px;border-radius:var(--radius);border:1px solid var(--line);background:#fff;transition:border-color .15s,box-shadow .15s}
+.ccard:hover{border-color:var(--orange);box-shadow:0 8px 22px rgba(224,102,31,.12)}
+.ccard .ci{width:54px;height:54px;border-radius:50%;background:var(--orange-soft);color:var(--orange);display:flex;align-items:center;justify-content:center;flex:none}
+.ccard .ci svg{width:26px;height:26px}
+.ccard small{display:block;color:var(--muted);font-size:14px}
+.ccard strong{font-size:22px;color:var(--navy);letter-spacing:-.01em}
+.ccard.email strong{font-size:19px}
+.note{background:var(--bg-alt);border-radius:var(--radius);padding:20px 22px;font-size:14.5px;color:var(--muted)}
+.note b{color:var(--navy)}
+
+/* footer */
+footer{background:var(--navy-deep);color:#9fb0c4;padding:44px 0 110px;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+footer img{height:96px;width:auto}
+footer p{line-height:1.9}
+footer a:hover{color:#fff}
+
+/* mobile bottom bar */
+.mbar{display:none}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.scroll-cue{animation:none}}
+
+@media (max-width:1000px){
+  .svc-grid{grid-template-columns:1fr}
+  .works{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(4,1fr);row-gap:34px}
+  .steps::before{display:none}
+  .cards{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  section{padding:72px 0}
+  nav a:not(.call){display:none}
+  nav .call{display:none}
+  .logo img{height:46px}
+  .hero{padding-top:100px}
+  .hero .btn{flex:1 1 100%;justify-content:center}
+  .hero .chips{margin-top:36px}
+  .works{grid-template-columns:1fr 1fr;gap:12px}
+  .work .meta{padding:12px}
+  .work h3{font-size:15px}
+  .work p{display:none}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .lb-stage{padding:0 8px}
+  .lb-nav{width:40px;height:40px;background:rgba(0,0,0,.45)}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;box-shadow:0 -4px 16px rgba(0,0,0,.12)}
+  .mbar a{display:flex;align-items:center;justify-content:center;gap:8px;padding:16px 0 calc(16px + env(safe-area-inset-bottom));font-weight:700;font-size:16px}
+  .mbar svg{width:20px;height:20px}
+  .mbar .m-call{background:var(--orange);color:#fff}
+  .mbar .m-mail{background:var(--navy);color:#fff}
+}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap">
+    <a href="#" class="logo" aria-label="명성도장 홈">
+      <img class="light" src="assets/myeongseong-logo-white.svg" alt="명성도장">
+      <img class="dark" src="assets/myeongseong-logo.svg" alt="명성도장">
+    </a>
+    <nav>
+      <a href="#services">서비스</a>
+      <a href="#works">시공 사례</a>
+      <a href="#process">시공 절차</a>
+      <a href="#contact">견적 문의</a>
+      <a class="call" href="tel:010-8007-3248">010-8007-3248</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>이름을 걸고<br><em>칠합니다.</em></h1>
+    <p>성실하고 꼼꼼한 시공으로 오래가는 품질을 약속드립니다.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="tel:010-8007-3248"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3.5h3.2l1.6 4.2-2.1 1.3a11 11 0 0 0 5.3 5.3l1.3-2.1 4.2 1.6V17a2 2 0 0 1-2 2A15.5 15.5 0 0 1 3 5.5a2 2 0 0 1 2-2z"/></svg>전화 상담 010-8007-3248</a>
+    </div>
+    <div class="chips"><span>건축 도장</span><span>탄성코트</span><span>방수 공사</span><span>에폭시 바닥</span><span>방청·내화 도장</span></div>
+  </div>
+  <svg class="scroll-cue" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">SERVICE</span>
+      <h2 class="title">시공 분야</h2>
+      <p class="lead">주거 공간부터 공장, 관공서까지. 현장에 맞는 공법으로 시공합니다.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc rv">
+        <div class="svc-head"><div class="svc-ic"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="14" height="5.5" rx="1.5"/><path d="M17 5.75h2.5a1 1 0 0 1 1 1V10.5a1 1 0 0 1-1 1H11v2.5"/><rect x="9.5" y="14" width="3" height="7.5" rx="1"/></svg>
+</div><div><small>01</small><h3>건축 도장</h3></div></div>
+        <ul>
+          <li><b>일반 내·외부 도장</b><span>주거 및 상업 공간의 가치를 높이는 페인트 시공</span></li>
+          <li><b>탄성코트</b><span>결로 및 곰팡이 완벽 차단, 아파트 베란다 필수 시공</span></li>
+        </ul>
+      </article>
+      <article class="svc rv">
+        <div class="svc-head"><div class="svc-ic"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5c-3.2 4-6 7.3-6 10.6a6 6 0 0 0 12 0c0-3.3-2.8-6.6-6-10.6z"/><path d="M9.3 14.5a2.8 2.8 0 0 0 2.7 2.6"/></svg></div><div><small>02</small><h3>방수 공사</h3></div></div>
+        <ul>
+          <li><b>우레탄 및 시트 복합 방수</b><span>옥상 및 노출 부위의 완벽한 빗물 차단</span></li>
+          <li><b>인젝션 방수<em class="tag">특수 주입식</em></b><span>지하실, 주차장 크랙 누수의 근본적 원인 차단</span></li>
+          <li><b>외벽 발수 코팅</b><span>빗물 스며듦 및 백화현상 예방</span></li>
+        </ul>
+      </article>
+      <article class="svc rv">
+        <div class="svc-head"><div class="svc-ic"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 4.5-9 4.5-9-4.5z"/><path d="M3 12l9 4.5 9-4.5"/><path d="M3 16.5L12 21l9-4.5"/></svg></div><div><small>03</small><h3>바닥 및 특수 공사</h3></div></div>
+        <ul>
+          <li><b>에폭시 도장</b><span>분진 방지 및 강력한 내마모성 (주차장, 공장, 물류창고)</span></li>
+          <li><b>폴리우레탄 바닥재</b><span>뛰어난 탄성력과 충격 흡수 (체육관, 육상 트랙, 어린이 놀이터)</span></li>
+          <li><b>MMA 미끄럼 방지</b><span>초속경화 완벽 논슬립 시공 (야외 데크, 관공서, 스쿨존)</span></li>
+          <li><b>탄소섬유 구조 보강</b><span>노후 건축물의 하중 견딤 및 내력 복원</span></li>
+          <li><b>방청 및 내화 도장</b><span>철골 부식 방지 및 화재 시 붕괴 지연 (교량, 플랜트, 산업용 중방식)</span></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="works">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">PORTFOLIO</span>
+      <h2 class="title">시공 사례</h2>
+      <p class="lead">직접 시공한 현장들입니다. 사진을 누르면 현장별 전체 사진을 볼 수 있습니다.</p>
+    </div>
+    <div class="filters" role="tablist">
+      <button class="on" data-f="all">전체</button>
+      <button data-f="interior">실내 도장</button>
+      <button data-f="exterior">외부·방수</button>
+      <button data-f="floor">바닥·에폭시</button>
+      <button data-f="special">방청·내화</button>
+    </div>
+    <div class="works" id="works-grid"></div>
+    <div class="more"><button class="btn" id="more-btn">시공 사례 더보기</button></div>
+  </div>
+</section>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="시공 사진 보기">
+  <div class="lb-top"><h4 id="lb-title"></h4><button class="lb-x" id="lb-x" aria-label="닫기">&times;</button></div>
+  <div class="lb-stage">
+    <button class="lb-nav lb-prev" id="lb-prev" aria-label="이전 사진">&#8249;</button>
+    <img id="lb-img" alt="">
+    <button class="lb-nav lb-next" id="lb-next" aria-label="다음 사진">&#8250;</button>
+  </div>
+  <div class="lb-thumbs" id="lb-thumbs"></div>
+</div>
+
+<section id="process">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">PROCESS</span>
+      <h2 class="title">시공 절차</h2>
+      <p class="lead">첫 상담부터 시공 후 관리까지, 책임지고 진행합니다.</p>
+    </div>
+    <div class="steps rv">
+      <div class="step"><div class="ic"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H10l-5 4v-4H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/><circle cx="8" cy="10.5" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="10.5" r="1" fill="currentColor" stroke="none"/><circle cx="16" cy="10.5" r="1" fill="currentColor" stroke="none"/></svg>
+</div><small>STEP 01</small><b>상담</b><span>전화·이메일로<br>시공 내용 상담</span></div>
+      <div class="step"><div class="ic"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="13" height="13" rx="3.5"/><circle cx="9" cy="11.5" r="2.5"/><path d="M15.5 15h6v3h-6"/><path d="M17.5 15v1.5M19.5 15v1.5"/></svg>
+</div><small>STEP 02</small><b>현장 방문·실측</b><span>현장 상태 확인<br>및 면적 실측</span></div>
+      <div class="step"><div class="ic"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.5" width="14" height="19" rx="2"/><rect x="8" y="5.5" width="8" height="3.5" rx=".5"/><circle cx="9" cy="13" r=".9" fill="currentColor" stroke="none"/><circle cx="12" cy="13" r=".9" fill="currentColor" stroke="none"/><circle cx="15" cy="13" r=".9" fill="currentColor" stroke="none"/><circle cx="9" cy="17" r=".9" fill="currentColor" stroke="none"/><circle cx="12" cy="17" r=".9" fill="currentColor" stroke="none"/><circle cx="15" cy="17" r=".9" fill="currentColor" stroke="none"/></svg>
+</div><small>STEP 03</small><b>견적</b><span>공법·자재별<br>상세 견적 안내</span></div>
+      <div class="step"><div class="ic"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2.5H7a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7.5z"/><path d="M14 2.5v5h5"/><path d="M8.5 11h7M8.5 14h4"/><path d="M8.5 18.5c.8-1.2 1.6-1.2 2 0s1.2.8 2-.4 1.2.8 2.5.4"/></svg>
+</div><small>STEP 04</small><b>계약</b><span>일정·범위 확정<br>후 계약 체결</span></div>
+      <div class="step"><div class="ic"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="14" height="5.5" rx="1.5"/><path d="M17 5.75h2.5a1 1 0 0 1 1 1V10.5a1 1 0 0 1-1 1H11v2.5"/><rect x="9.5" y="14" width="3" height="7.5" rx="1"/></svg>
+</div><small>STEP 05</small><b>시공</b><span>보양 작업부터<br>꼼꼼한 시공</span></div>
+      <div class="step"><div class="ic"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17.5" rx="2"/><rect x="9" y="2.5" width="6" height="3" rx="1"/><path d="M9 13l2 2 4-4.5"/></svg>
+</div><small>STEP 06</small><b>마감 점검</b><span>최종 품질 확인</span></div>
+      <div class="step"><div class="ic"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l7.5 3v5.5c0 4.6-3.1 8.3-7.5 10.5-4.4-2.2-7.5-5.9-7.5-10.5V5.5z"/><path d="M8.75 12l2.25 2.25 4.25-4.5"/></svg>
+</div><small>STEP 07</small><b>A/S</b><span>시공 후에도<br>책임 관리</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">CONTACT</span>
+      <h2 class="title">견적 문의</h2>
+      <p class="lead">현장 사진과 함께 문의 주시면 더 정확한 상담이 가능합니다.</p>
+    </div>
+    <div class="cards rv">
+        <a class="ccard" href="tel:010-8007-3248"><div class="ci"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3.5h3.2l1.6 4.2-2.1 1.3a11 11 0 0 0 5.3 5.3l1.3-2.1 4.2 1.6V17a2 2 0 0 1-2 2A15.5 15.5 0 0 1 3 5.5a2 2 0 0 1 2-2z"/></svg></div><div><small>전화 상담</small><strong>010-8007-3248</strong></div></a>
+        <a class="ccard email" href="mailto:dekgu67@daum.net"><div class="ci"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg></div><div><small>이메일 견적</small><strong>dekgu67@daum.net</strong></div></a>
+        <div class="note"><b>견적 문의 시 알려주세요</b><br>시공 지역 · 공간 종류(주택/상가/공장 등) · 대략적인 면적 · 현장 사진</div>
+      </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/myeongseong-logo-white.svg" alt="명성도장">
+    <p>명성도장 · 대표 이덕규<br>건축 도장 · 방수 · 바닥 및 특수 공사<br>
+      전화 <a href="tel:010-8007-3248">010-8007-3248</a> · 이메일 <a href="mailto:dekgu67@daum.net">dekgu67@daum.net</a><br>
+      © 명성도장. All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a class="m-call" href="tel:010-8007-3248"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3.5h3.2l1.6 4.2-2.1 1.3a11 11 0 0 0 5.3 5.3l1.3-2.1 4.2 1.6V17a2 2 0 0 1-2 2A15.5 15.5 0 0 1 3 5.5a2 2 0 0 1 2-2z"/></svg>전화하기</a>
+  <a class="m-mail" href="mailto:dekgu67@daum.net"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>이메일 문의</a>
+</div>
+
+<script>
+const PROJECTS = [{"name": "방배동 실내도장", "detail": "", "cat": ["interior", "floor"], "cover": "images/works/p01/cover.jpg", "images": ["images/works/p01/1.jpg", "images/works/p01/2.jpg", "images/works/p01/3.jpg", "images/works/p01/4.jpg", "images/works/p01/5.jpg", "images/works/p01/6.jpg", "images/works/p01/7.jpg", "images/works/p01/8.jpg", "images/works/p01/9.jpg", "images/works/p01/10.jpg", "images/works/p01/11.jpg"]}, {"name": "춘천 강원대병원 내 카페 리모델링", "detail": "", "cat": ["interior"], "cover": "images/works/p02/cover.jpg", "images": ["images/works/p02/2.jpg", "images/works/p02/3.jpg", "images/works/p02/4.jpg", "images/works/p02/5.jpg", "images/works/p02/6.jpg", "images/works/p02/7.jpg", "images/works/p02/8.jpg", "images/works/p02/9.jpg", "images/works/p02/10.jpg", "images/works/p02/11.jpg", "images/works/p02/12.jpg"]}, {"name": "강화동검도 별장", "detail": "실내도장, 실외발수", "cat": ["interior", "exterior"], "cover": "images/works/p03/cover.jpg", "images": ["images/works/p03/1.jpg", "images/works/p03/2.jpg", "images/works/p03/3.jpg", "images/works/p03/4.jpg", "images/works/p03/5.jpg", "images/works/p03/6.jpg", "images/works/p03/7.jpg", "images/works/p03/8.jpg", "images/works/p03/9.jpg", "images/works/p03/10.jpg", "images/works/p03/11.jpg", "images/works/p03/12.jpg", "images/works/p03/13.jpg", "images/works/p03/14.jpg", "images/works/p03/15.jpg"]}, {"name": "부천 바닥 에폭시라이닝 3mm", "detail": "", "cat": ["floor"], "cover": "images/works/p04/cover.jpg", "images": ["images/works/p04/1.jpg", "images/works/p04/2.jpg", "images/works/p04/3.jpg", "images/works/p04/4.jpg", "images/works/p04/5.jpg", "images/works/p04/6.jpg"]}, {"name": "영종 카페 샷시 도장", "detail": "", "cat": ["interior"], "cover": "images/works/p05/cover.jpg", "images": ["images/works/p05/1.jpg", "images/works/p05/2.jpg", "images/works/p05/3.jpg", "images/works/p05/4.jpg", "images/works/p05/6.jpg", "images/works/p05/7.jpg"]}, {"name": "실내 인테리어도장", "detail": "", "cat": ["interior"], "cover": "images/works/p06/cover.jpg", "images": ["images/works/p06/1.jpg", "images/works/p06/2.jpg", "images/works/p06/3.jpg", "images/works/p06/4.jpg", "images/works/p06/5.jpg", "images/works/p06/6.jpg", "images/works/p06/7.jpg", "images/works/p06/8.jpg", "images/works/p06/9.jpg", "images/works/p06/10.jpg", "images/works/p06/11.jpg", "images/works/p06/12.jpg", "images/works/p06/13.jpg", "images/works/p06/14.jpg", "images/works/p06/15.jpg", "images/works/p06/16.jpg", "images/works/p06/17.jpg", "images/works/p06/18.jpg", "images/works/p06/19.jpg", "images/works/p06/20.jpg", "images/works/p06/21.jpg", "images/works/p06/22.jpg", "images/works/p06/23.jpg"]}, {"name": "석모리 사무실 실내 도장", "detail": "", "cat": ["interior"], "cover": "images/works/p07/cover.jpg", "images": ["images/works/p07/1.jpg", "images/works/p07/2.jpg", "images/works/p07/3.jpg", "images/works/p07/4.jpg"]}, {"name": "월곶 포내리 단독주택 리모델링", "detail": "", "cat": ["interior", "exterior"], "cover": "images/works/p08/cover.jpg", "images": ["images/works/p08/1.jpg", "images/works/p08/2.jpg", "images/works/p08/3.jpg", "images/works/p08/4.jpg", "images/works/p08/5.jpg", "images/works/p08/6.jpg", "images/works/p08/7.jpg", "images/works/p08/8.jpg"]}, {"name": "일산 클라이밍", "detail": "", "cat": ["interior"], "cover": "images/works/p09/cover.jpg", "images": ["images/works/p09/1.jpg", "images/works/p09/2.jpg", "images/works/p09/3.jpg", "images/works/p09/4.jpg", "images/works/p09/5.jpg", "images/works/p09/6.jpg", "images/works/p09/7.jpg", "images/works/p09/8.jpg", "images/works/p09/9.jpg"]}, {"name": "산곡동 상가 리모델링", "detail": "", "cat": ["floor", "exterior"], "cover": "images/works/p10/cover.jpg", "images": ["images/works/p10/1.jpg", "images/works/p10/2.jpg", "images/works/p10/3.jpg", "images/works/p10/4.jpg", "images/works/p10/5.jpg", "images/works/p10/6.jpg", "images/works/p10/7.jpg", "images/works/p10/8.jpg", "images/works/p10/9.jpg", "images/works/p10/10.jpg", "images/works/p10/11.jpg", "images/works/p10/12.jpg", "images/works/p10/13.jpg", "images/works/p10/14.jpg", "images/works/p10/15.jpg"]}, {"name": "석모리 에폭시도장", "detail": "", "cat": ["floor"], "cover": "images/works/p11/cover.jpg", "images": ["images/works/p11/1.jpg", "images/works/p11/2.jpg", "images/works/p11/3.jpg", "images/works/p11/4.jpg", "images/works/p11/5.jpg", "images/works/p11/6.jpg"]}, {"name": "대박노래방 실내 도장", "detail": "", "cat": ["interior"], "cover": "images/works/p12/cover.jpg", "images": ["images/works/p12/1.jpg", "images/works/p12/2.jpg", "images/works/p12/3.jpg", "images/works/p12/4.jpg", "images/works/p12/5.jpg", "images/works/p12/6.jpg", "images/works/p12/7.jpg", "images/works/p12/8.jpg", "images/works/p12/9.jpg", "images/works/p12/10.jpg", "images/works/p12/11.jpg", "images/works/p12/12.jpg", "images/works/p12/13.jpg"]}, {"name": "역삼동 상가", "detail": "석고보드 줄퍼티, 시멘트스타코, 실내도장", "cat": ["interior"], "cover": "images/works/p13/cover.jpg", "images": ["images/works/p13/1.jpg", "images/works/p13/2.jpg", "images/works/p13/3.jpg", "images/works/p13/4.jpg", "images/works/p13/5.jpg"]}, {"name": "인천 서구 원창동 신축썬팅 셀프세차장", "detail": "", "cat": ["floor"], "cover": "images/works/p14/cover.jpg", "images": ["images/works/p14/1.jpg", "images/works/p14/2.jpg", "images/works/p14/3.jpg", "images/works/p14/4.jpg", "images/works/p14/5.jpg", "images/works/p14/6.jpg", "images/works/p14/7.jpg", "images/works/p14/8.jpg", "images/works/p14/9.jpg", "images/works/p14/10.jpg", "images/works/p14/11.jpg", "images/works/p14/12.jpg", "images/works/p14/13.jpg", "images/works/p14/14.jpg"]}, {"name": "대곶 정희화학", "detail": "바닥에폭시, 라인마킹", "cat": ["floor"], "cover": "images/works/p15/cover.jpg", "images": ["images/works/p15/1.jpg", "images/works/p15/2.jpg", "images/works/p15/3.jpg", "images/works/p15/4.jpg", "images/works/p15/5.jpg", "images/works/p15/6.jpg", "images/works/p15/7.jpg", "images/works/p15/8.jpg", "images/works/p15/9.jpg", "images/works/p15/10.jpg", "images/works/p15/11.jpg", "images/works/p15/12.jpg"]}, {"name": "단독주택 공사", "detail": "외벽 발수, 처마 부식 보수", "cat": ["exterior"], "cover": "images/works/p16/cover.jpg", "images": ["images/works/p16/4.jpg", "images/works/p16/5.jpg", "images/works/p16/6.jpg", "images/works/p16/7.jpg", "images/works/p16/8.jpg"]}, {"name": "남양주 진접개곡리 신축공장", "detail": "", "cat": ["interior", "floor"], "cover": "images/works/p17/cover.jpg", "images": ["images/works/p17/1.jpg", "images/works/p17/2.jpg", "images/works/p17/4.jpg", "images/works/p17/5.jpg", "images/works/p17/6.jpg", "images/works/p17/7.jpg", "images/works/p17/8.jpg", "images/works/p17/9.jpg", "images/works/p17/10.jpg", "images/works/p17/11.jpg", "images/works/p17/12.jpg", "images/works/p17/13.jpg", "images/works/p17/14.jpg"]}, {"name": "김포 하성 전류리", "detail": "내화작업", "cat": ["special"], "cover": "images/works/p18/cover.jpg", "images": ["images/works/p18/1.jpg", "images/works/p18/2.jpg", "images/works/p18/3.jpg", "images/works/p18/4.jpg", "images/works/p18/5.jpg", "images/works/p18/6.jpg", "images/works/p18/7.jpg", "images/works/p18/8.jpg", "images/works/p18/9.jpg"]}, {"name": "여의도 실내 분체도장", "detail": "", "cat": ["interior"], "cover": "images/works/p19/cover.jpg", "images": ["images/works/p19/1.jpg", "images/works/p19/2.jpg", "images/works/p19/3.jpg"]}, {"name": "역삼동 상가", "detail": "에폭시 코팅, 계단 라이닝", "cat": ["floor"], "cover": "images/works/p20/cover.jpg", "images": ["images/works/p20/1.jpg", "images/works/p20/2.jpg", "images/works/p20/3.jpg", "images/works/p20/4.jpg", "images/works/p20/5.jpg", "images/works/p20/6.jpg", "images/works/p20/7.jpg", "images/works/p20/9.jpg", "images/works/p20/10.jpg", "images/works/p20/11.jpg", "images/works/p20/12.jpg", "images/works/p20/13.jpg"]}, {"name": "김포 통진 새마을회관 옥상방수", "detail": "", "cat": ["exterior"], "cover": "images/works/p21/cover.jpg", "images": ["images/works/p21/1.jpg", "images/works/p21/2.jpg", "images/works/p21/3.jpg", "images/works/p21/4.jpg", "images/works/p21/5.jpg", "images/works/p21/6.jpg", "images/works/p21/7.jpg", "images/works/p21/8.jpg", "images/works/p21/9.jpg", "images/works/p21/10.jpg", "images/works/p21/11.jpg", "images/works/p21/12.jpg", "images/works/p21/13.jpg", "images/works/p21/14.jpg", "images/works/p21/15.jpg", "images/works/p21/16.jpg", "images/works/p21/17.jpg", "images/works/p21/18.jpg"]}, {"name": "대곶 식당 천장 텍스리모델링", "detail": "", "cat": ["interior"], "cover": "images/works/p22/cover.jpg", "images": ["images/works/p22/1.jpg", "images/works/p22/2.jpg", "images/works/p22/3.jpg", "images/works/p22/4.jpg", "images/works/p22/5.jpg"]}, {"name": "김포 대곶 판넬창고", "detail": "", "cat": ["floor"], "cover": "images/works/p23/cover.jpg", "images": ["images/works/p23/1.jpg", "images/works/p23/2.jpg", "images/works/p23/3.jpg", "images/works/p23/4.jpg", "images/works/p23/5.jpg", "images/works/p23/6.jpg"]}, {"name": "대곶 정희화학 에폭시 도장", "detail": "", "cat": ["floor"], "cover": "images/works/p24/cover.jpg", "images": ["images/works/p24/1.jpg", "images/works/p24/2.jpg", "images/works/p24/3.jpg", "images/works/p24/4.jpg", "images/works/p24/5.jpg", "images/works/p24/6.jpg", "images/works/p24/7.jpg", "images/works/p24/8.jpg"]}, {"name": "빈티지 바닥 라이닝", "detail": "", "cat": ["floor"], "cover": "images/works/p25/cover.jpg", "images": ["images/works/p25/1.jpg", "images/works/p25/2.jpg", "images/works/p25/3.jpg", "images/works/p25/4.jpg", "images/works/p25/5.jpg"]}, {"name": "낭만포차 주점 공사", "detail": "", "cat": ["interior"], "cover": "images/works/p26/cover.jpg", "images": ["images/works/p26/1.jpg", "images/works/p26/2.jpg", "images/works/p26/3.jpg", "images/works/p26/4.jpg", "images/works/p26/5.jpg", "images/works/p26/6.jpg", "images/works/p26/7.jpg", "images/works/p26/8.jpg"]}];
+const CAT = {interior:"실내 도장", exterior:"외부·방수", floor:"바닥·에폭시", special:"방청·내화"};
+const grid = document.getElementById("works-grid"), moreBtn = document.getElementById("more-btn");
+let filter = "all", expanded = false;
+const PAGE = 9;
+
+function render(){
+  const list = PROJECTS.map((p,i)=>({...p,i})).filter(p => filter==="all" || p.cat.includes(filter));
+  const shown = expanded ? list : list.slice(0, PAGE);
+  grid.innerHTML = shown.map(p => `
+    <button class="work" data-i="${p.i}">
+      <div class="ph"><img src="${p.cover}" alt="${p.name}" loading="lazy"><span class="cnt">사진 ${p.images.length}장</span></div>
+      <div class="meta"><div class="cats">${p.cat.map(c=>`<span>${CAT[c]}</span>`).join("")}</div>
+      <h3>${p.name}</h3>${p.detail?`<p>${p.detail}</p>`:""}</div>
+    </button>`).join("");
+  moreBtn.parentElement.style.display = list.length > PAGE && !expanded ? "" : "none";
+}
+document.querySelectorAll(".filters button").forEach(b => b.onclick = () => {
+  document.querySelectorAll(".filters button").forEach(x => x.classList.toggle("on", x===b));
+  filter = b.dataset.f; expanded = false; render();
+});
+moreBtn.onclick = () => { expanded = true; render(); };
+grid.onclick = e => { const w = e.target.closest(".work"); if (w) openLB(+w.dataset.i); };
+render();
+
+/* lightbox */
+const lb = document.getElementById("lb"), lbImg = document.getElementById("lb-img"),
+      lbTitle = document.getElementById("lb-title"), lbThumbs = document.getElementById("lb-thumbs");
+let cur = null, idx = 0;
+function openLB(i){
+  cur = PROJECTS[i]; idx = 0;
+  lbThumbs.innerHTML = cur.images.map((s,k)=>`<img src="${s}" data-k="${k}" loading="lazy" alt="">`).join("");
+  lb.classList.add("open"); document.body.style.overflow = "hidden"; show();
+}
+function show(){
+  lbImg.src = cur.images[idx];
+  lbImg.alt = `${cur.name} 시공 사진 ${idx+1}`;
+  lbTitle.innerHTML = `${cur.name}<small>${idx+1} / ${cur.images.length}</small>`;
+  [...lbThumbs.children].forEach((t,k)=>t.classList.toggle("on", k===idx));
+  lbThumbs.children[idx]?.scrollIntoView({block:"nearest", inline:"center"});
+}
+function step(d){ idx = (idx + d + cur.images.length) % cur.images.length; show(); }
+function closeLB(){ lb.classList.remove("open"); document.body.style.overflow = ""; }
+document.getElementById("lb-prev").onclick = () => step(-1);
+document.getElementById("lb-next").onclick = () => step(1);
+document.getElementById("lb-x").onclick = closeLB;
+lbThumbs.onclick = e => { if (e.target.dataset.k) { idx = +e.target.dataset.k; show(); } };
+lb.onclick = e => { if (e.target === lb || e.target.classList.contains("lb-stage")) closeLB(); };
+document.addEventListener("keydown", e => {
+  if (!lb.classList.contains("open")) return;
+  if (e.key === "Escape") closeLB(); else if (e.key === "ArrowLeft") step(-1); else if (e.key === "ArrowRight") step(1);
+});
+let sx = null;
+lbImg.addEventListener("touchstart", e => sx = e.touches[0].clientX, {passive:true});
+lbImg.addEventListener("touchend", e => { if (sx === null) return; const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 40) step(dx < 0 ? 1 : -1); sx = null; });
+
+/* header style on scroll */
+const header = document.querySelector("header");
+const onScroll = () => header.classList.toggle("solid", scrollY > 60);
+addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+/* reveal on scroll */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }), {threshold:.12});
+document.querySelectorAll(".rv").forEach(el => io.observe(el));
+
+</script>
+</body>
+</html>
